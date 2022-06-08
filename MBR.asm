@@ -58,28 +58,28 @@ BITS 16													;16位实模式
 		
 @GetReturn:
 		call 	@readbyte
-		cmp		al, 0x78								;不是则继续读取
+		cmp		al, 0x78 ;x								;不是则继续读取
 		jnz		@GetReturn
 		call 	@readbyte
-		cmp		al, 0x64
+		cmp		al, 0x64 ;d
 		jnz		@GetReturn
 		call 	@readbyte
-		cmp		al, 0x65
+		cmp		al, 0x65 ;e
 		jnz		@GetReturn
 		call 	@readbyte
-		cmp		al, 0x66
+		cmp		al, 0x66 ;f
 		jnz		@GetReturn		
 		call 	@readbyte
-		cmp		al, 0x30								
+		cmp		al, 0x30 ;0			 					
 		jnz		@GetReturn								
 		call 	@readbyte
-		cmp		al, 0x38
+		cmp		al, 0x38 ;8
 		jnz		@GetReturn
 		call 	@readbyte
-		cmp		al, 0x31
+		cmp		al, 0x31 ;1
 		jnz		@GetReturn
 		call 	@readbyte
-		cmp		al, 0x37
+		cmp		al, 0x37 ;7
 		jnz		@GetReturn
 		
 		ret
